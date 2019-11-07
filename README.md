@@ -51,6 +51,7 @@ jupyter lab
 
 ## Run the Flask Server
 1. Navigate to the project directories subdirectory "webapp" and enter:
+dir: ....\4th-year-emerging-technologies-project\webapp
 python app.py
 
 ## Research
