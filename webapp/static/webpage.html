@@ -7,7 +7,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Digit Recogniser</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
       #canvasDiv{
       margin: 0px auto;
@@ -18,6 +17,7 @@
       #buttonDiv{
         margin: 0px auto;
         text-align: center;
+        padding: 20px;
       }     
       #canvasID{
         border: 1px solid black;
@@ -28,6 +28,7 @@
         padding: 10px 20px;
         text-align: center;
         font-size: 16px;
+        border-radius: 12px;
       }
       #resetBtn{
         background-color: red; /* Green */
@@ -35,6 +36,7 @@
         padding: 10px 20px;
         text-align: center;
         font-size: 16px;
+        border-radius: 12px;
       }
     </style>
   </head>
@@ -51,6 +53,7 @@
   <script>
     // Adpated from: https://www.html5canvastutorials.com/labs/html5-canvas-paint-application/
     
+    //Drawing on the canvas =============================================================
     // getting the canvas from the body 
     var canvas = document.getElementById('canvasID');
     // creating a var to draw the digits
@@ -67,7 +70,7 @@
     // set the params of the mouse to 0, 0
     var mouse = {x: 0, y: 0};
 
-    // add an event listener for when the mouse moves on the canvas
+    // determine and correct to offset of the mouse on the canvas
     canvas.addEventListener('mousemove',  function(e){
       mouse.x = e.pageX - this.offsetLeft;
       mouse.y = e.pageY - this.offsetTop;
@@ -82,7 +85,7 @@
     canvas.addEventListener('mousedown',function(e){
       ctx.beginPath();
       ctx.moveTo(mouse.x, mouse.y);
-      canvas.addEventListener("mousemove", onPaint, false);
+      canvas.addEventListener('mousemove', onPaint, false);
     }, false);
 
     canvas.addEventListener('mouseup', function(e){
@@ -93,5 +96,28 @@
       ctx.lineTo(mouse.x, mouse.y);
       ctx.stroke();
     };
+
+    // JQuery Methods ===========================================================
+    // Reset the canvas
+    $('#resetBtn').click(function(){
+      var canvas = document.getElementById('canvasID');
+      var ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0,  canvas.width, canvas.height);
+    });
+    
+    // Save the Canvas
+    $('#saveBtn').click(function(){
+      var canvas = document.getElementById("canvasID");
+      var dataURL=canvas.toDataURL();
+      $.ajax({
+        type: 'POST',
+        url: '/static/app.py',
+        data: {
+          imgBase64: dataURL
+        }
+      }).done(function(e){
+        console.log('Canvas saved as Image');
+      });
+    });
   </script>
 </html>
