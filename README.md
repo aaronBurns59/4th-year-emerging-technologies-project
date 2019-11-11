@@ -53,6 +53,7 @@ jupyter lab
 1. Navigate to the project directories subdirectory "webapp"  
 ....\4th-year-emerging-technologies-project\webapp  
 python app.py
+env FLASK_APP=app.py flask run
 
 ## Research
 
