@@ -6,54 +6,92 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <title>Digit Recogniser</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
-      #canvasDiv {
+      #canvasDiv{
+      margin: 0px auto;
+      text-align: center;
+      width: 500px;
+      height: 500px;
+      }
+      #buttonDiv{
         margin: 0px auto;
         text-align: center;
-          }
-
-       #buttonDiv {
-          margin: 0px auto;
-          text-align: center;
-        }
-      
-        #canvasID {
-          border: 1px solid black;
-          width: 500px;
-          height: 500px;
-        }
-        #saveBtn {
-          background-color: green; /* Green */
-          color: white;
-          padding: 10px 20px;
-          text-align: center;
-          font-size: 16px;
-        }
-        #resetBtn {
-          background-color: red; /* Green */
-          color: white;
-          padding: 10px 20px;
-          text-align: center;
-          font-size: 16px;
-        }
+      }     
+      #canvasID{
+        border: 1px solid black;
+      }
+      #saveBtn{
+        background-color: green; /* Green */
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+      }
+      #resetBtn{
+        background-color: red; /* Green */
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+      }
     </style>
-
   </head>
-  <body >
+  <body data-rsssl=1>
     <div id="canvasDiv">
         <canvas id="canvasID"></canvas>
     </div>
-
     <div id="buttonDiv">
         <button id="saveBtn">Save</button> <button id="resetBtn">Reset</button>
     </div>
-
-
   </body>
   <!--Import for JQuery-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script>
+    // Adpated from: https://www.html5canvastutorials.com/labs/html5-canvas-paint-application/
+    
+    // getting the canvas from the body 
+    var canvas = document.getElementById('canvasID');
+    // creating a var to draw the digits
+    var ctx = canvas.getContext('2d');
+    
+    // getting the id of the div the canvas is contained in
+    var painting = document.getElementById('canvasDiv');
+    var paint_style = getComputedStyle(painting);
+
+    // get the width and height of the canvas from the canvas element in the html tag
+    canvas.width = parseInt(paint_style.getPropertyValue('width'));
+    canvas.height = parseInt(paint_style.getPropertyValue('height'));
+    
+    // set the params of the mouse to 0, 0
+    var mouse = {x: 0, y: 0};
+
+    // add an event listener for when the mouse moves on the canvas
+    canvas.addEventListener('mousemove',  function(e){
+      mouse.x = e.pageX - this.offsetLeft;
+      mouse.y = e.pageY - this.offsetTop;
+    }, false);
+
+    // Changing the properties of the ctx
+    ctx.lineWidth =5;
+    ctx.lineJoin = 'round';
+    ctx.linCap = 'round';
+    ctx.strokeStyle= '#OOCC99';
+
+    canvas.addEventListener('mousedown',function(e){
+      ctx.beginPath();
+      ctx.moveTo(mouse.x, mouse.y);
+      canvas.addEventListener("mousemove", onPaint, false);
+    }, false);
+
+    canvas.addEventListener('mouseup', function(e){
+      canvas.removeEventListener('mousemove', onPaint, false);
+    }, false);
+
+    var onPaint = function() {
+      ctx.lineTo(mouse.x, mouse.y);
+      ctx.stroke();
+    };
+  </script>
 </html>
