@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <!-- Aaron Burns - webpage -->
 <!-- Webpage which contains a canvas that can read symbol drawn on it via users mouse -->
-<html>
+<html lang="en">
   <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Digit Recogniser</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-      <canvas>
 
-      </canvas>
+  </head>
+  <body >
+    <div id="canvasDiv">
+        <canvas id="canvasID"></canvas>
+    </div>
+
+    <div id="buttonDiv">
+        <button id="saveBtn">Save</button> <button id="resetBtn">Reset</button>
+    </div>
+
+
   </body>
-  <script></script>
+  <!--Import for JQuery-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </html>

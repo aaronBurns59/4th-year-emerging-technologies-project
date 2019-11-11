@@ -50,12 +50,12 @@ jupyter lab
 [https://youtu.be/8avwgjr3oTw](https://youtu.be/8avwgjr3oTw)  
 
 ## Run the Flask Server
-1. Navigate to the project directories subdirectory "webapp" and enter:
-dir: ....\4th-year-emerging-technologies-project\webapp
+1. Navigate to the project directories subdirectory "webapp"  
+....\4th-year-emerging-technologies-project\webapp  
 python app.py
 
 ## Research
 
 ## References
-
+[https://keras.io/](https://keras.io/)
 
