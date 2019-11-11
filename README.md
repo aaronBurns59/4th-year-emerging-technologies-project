@@ -57,6 +57,18 @@ env FLASK_APP=app.py flask run
 
 ## Research
 
+### - Keras
+keras is a ***high level neural networks API***. It is written in Python and can run on top of Tensorflow (Tensorflow is used in the backend). It is good for those who want to experiment quickly with neural networks in a very streamlined implementation, without knowing exactly how machine learning works.
+
+#### Guiding Principles
+1. User Friendlyness: Designed for humans, follows best practises for reducing cognitve load and offers simple and consistent APIs
+
+2. Modularity: Fully configured **models** can be plugged together with few restrictions. ***neural layers, activation functions, optimizers etc.*** are all stand alone models that can be combine in creating **the** model for the neural network
+
+3. Easily Extendibility: New models are simple to add ***model.add(....)***
+
+4. Works with Python: Models are described in python code, this make it easier to debug and easier to extend. 
+
 ## References
 [https://keras.io/](https://keras.io/)
 
