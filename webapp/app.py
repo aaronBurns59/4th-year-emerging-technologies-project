@@ -3,13 +3,12 @@
 
 # Adpated from: https://palletsprojects.com/p/flask/
 
-from flask import Flask, escape, request
+import flask as fl
 
-app = Flask(__name__)
+app = fl.Flask(__name__)
 
 @app.route('/')
-def hello():
-    name = request.args.get("name", "World")
-    return f'Hello, {escape(name)}!'
+def home():
+    return app.send_static_file('webpage.html')
 
 app.run()

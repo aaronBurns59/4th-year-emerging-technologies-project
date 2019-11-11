@@ -4,4 +4,4 @@
 // flask server
 
 // Get the canvas in the html page
-console.log("Hello world!"); 
+console.log('Hello world!'); 
