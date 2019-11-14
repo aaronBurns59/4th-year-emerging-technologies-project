@@ -18,7 +18,10 @@ def home():
 
 @app.route('/predictDigit', methods=['POST'])
 def convertImage():
-    return 4
+    # get the image from the request
+    image = fl.request.values[('imgBase64')]
+
+    return image
 
 
 # Recommended to have this

@@ -113,6 +113,7 @@
     $('#saveBtn').click(function(){
     var canvas = document.getElementById("canvasID");
     var dataURL=canvas.toDataURL();
+    console.log(dataURL);
     $.ajax({
       type: 'POST',
       url: '/predictDigit',
