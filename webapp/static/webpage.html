@@ -110,16 +110,18 @@
     });
     
     // Save the Canvas
+    $('#saveBtn').click(function(){
     var canvas = document.getElementById("canvasID");
     var dataURL=canvas.toDataURL();
     $.ajax({
       type: 'POST',
-      url: '/static/app.py',
+      url: '/predictDigit',
       data: {
         imgBase64: dataURL
       }
     }).done(function(e){
-      console.log('Canvas saved as Image');
+      console.log('SENT');
     });
+  });
   </script>
 </html>

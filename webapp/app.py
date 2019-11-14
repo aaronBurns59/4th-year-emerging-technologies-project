@@ -4,6 +4,11 @@
 # Adpated from: https://palletsprojects.com/p/flask/
 
 import flask as fl
+import base64
+import numpy as np
+
+from io import StringIO
+import PIL.Image
 
 app = fl.Flask(__name__)
 
@@ -11,4 +16,11 @@ app = fl.Flask(__name__)
 def home():
     return app.send_static_file('webpage.html')
 
-app.run()
+@app.route('/predictDigit', methods=['POST'])
+def convertImage():
+    return 4
+
+
+# Recommended to have this
+if __name__ == "__main__":
+    app.run(debug = True)

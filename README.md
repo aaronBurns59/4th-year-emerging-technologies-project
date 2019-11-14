@@ -17,11 +17,11 @@ Download **Python** version 3.7 through ***Anaconda*** (Works with any OS)
 [https://www.anaconda.com/distribution/](https://www.anaconda.com/distribution/)
 
 Check the version of python, open a cmd/terminal and enter
-python --version
+- python --version
 make sure its al least version 3.7.
 
 If you have an older version of anaconda  you can update it with
-conda update --all
+- conda update --all
 
 ### Anaconda
 Comes with the following packages which will be used in the project
@@ -52,11 +52,11 @@ jupyter lab
 ## Run the Flask Server
 1. Navigate to the project directories subdirectory "webapp"  
 ....\4th-year-emerging-technologies-project\webapp  
-python app.py
-env FLASK_APP=app.py flask run
+- python app.py
+or
+- env FLASK_APP=app.py flask run
 
 ## Research
-
 ### - Keras
 keras is a ***high level neural networks API***. It is written in Python and can run on top of Tensorflow (Tensorflow is used in the backend). It is good for those who want to experiment quickly with neural networks in a very streamlined implementation, without knowing exactly how machine learning works.
 
@@ -67,7 +67,15 @@ keras is a ***high level neural networks API***. It is written in Python and can
 
 3. Easily Extendibility: New models are simple to add ***model.add(....)***
 
-4. Works with Python: Models are described in python code, this make it easier to debug and easier to extend. 
+4. Works with Python: Models are described in python code, this make it easier to debug and easier to extend.
+
+### - Tensorflow
+
+### - NumPy
+
+### - MNSIT
+
+### - Flask
 
 ## References
 [https://keras.io/](https://keras.io/)
