@@ -52,8 +52,6 @@ jupyter lab
 ## Run the Flask Server
 1. Navigate to the project directories subdirectory "webapp"  
 ....\4th-year-emerging-technologies-project\webapp  
-- python app.py
-or
 - env FLASK_APP=app.py flask run
 
 ## Research
@@ -72,6 +70,8 @@ keras is a ***high level neural networks API***. It is written in Python and can
 ### - Tensorflow
 
 ### - NumPy
+
+#### - One Hot Vector
 
 ### - MNSIT
 

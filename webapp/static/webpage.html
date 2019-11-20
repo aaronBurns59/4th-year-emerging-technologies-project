@@ -20,7 +20,8 @@
         padding: 20px;
       }     
       #canvasID{
-        border: 1px solid black;
+        border: 1px solid purple;
+        background-color: black;
       }
       #saveBtn{
         background-color: green; /* Green */
@@ -49,7 +50,6 @@
     </div>
   </body>
   <!--Import for JQuery-->
-
   <script
 			  src="https://code.jquery.com/jquery-3.4.1.js"
 			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -84,7 +84,7 @@
     ctx.lineWidth =5;
     ctx.lineJoin = 'round';
     ctx.linCap = 'round';
-    ctx.strokeStyle= '#OOCC99';
+    ctx.strokeStyle= '#FFFFFF';
 
     canvas.addEventListener('mousedown',function(e){
       ctx.beginPath();
