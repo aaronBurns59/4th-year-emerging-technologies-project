@@ -1,0 +1,35 @@
+#canvasDiv{
+    margin: 0px auto;
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    }
+    #buttonDiv{
+      margin: 0px auto;
+      text-align: center;
+      padding: 20px;
+    }     
+    #canvasID{
+      border: 5px solid yellow;
+      background-color: black;
+    }
+    #saveBtn{
+      background-color: green; /* Green */
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 16px;
+      border-radius: 12px;
+    }
+    #resetBtn{
+      background-color: red; /* Green */
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 16px;
+      border-radius: 12px;
+    }
+    #result{
+      text-align: center;
+      font-size: 45px;
+    }

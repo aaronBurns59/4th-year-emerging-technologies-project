@@ -5,13 +5,16 @@
 
 import flask as fl
 import base64
+import numpy as np
+import keras as kr
 
 model = kr.models.load_model('../model.h5')
 app = fl.Flask(__name__)
 
 @app.route('/')
 def home():
-    return app.send_static_file('webpage.html')
+    #return app.send_static_file('webpage.html')
+    return fl.render_template('app/html/webpage.html')
 
 @app.route('/predictDigit', methods=['POST'])
 def convertImage():
@@ -26,6 +29,8 @@ def convertImage():
     # return the encoded image back to the client
     return decodedImage
 
+def predictImage():
+    image = convertImage()
     
 # Recommended to have this
 if __name__ == "__main__":

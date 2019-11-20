@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- Aaron Burns - webpage -->
+<!-- Webpage which contains a canvas that can read symbol drawn on it via users mouse -->
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Digit Recogniser</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body data-rsssl=1>
+    <div id="canvasDiv">
+        <canvas id="canvasID"></canvas>
+    </div>
+    <div id="buttonDiv">
+        <button id="saveBtn">Save</button> <button id="resetBtn">Reset</button>
+    </div>
+    <div id="result">
+      <h3>Result</h3>
+    </div>
+  </body>
+  <!--Import for JQuery-->
+  <script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</html>

@@ -1,60 +1,4 @@
-<!DOCTYPE html>
-<!-- Aaron Burns - webpage -->
-<!-- Webpage which contains a canvas that can read symbol drawn on it via users mouse -->
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Digit Recogniser</title>
-    <style>
-      #canvasDiv{
-      margin: 0px auto;
-      text-align: center;
-      width: 500px;
-      height: 500px;
-      }
-      #buttonDiv{
-        margin: 0px auto;
-        text-align: center;
-        padding: 20px;
-      }     
-      #canvasID{
-        border: 1px solid purple;
-        background-color: black;
-      }
-      #saveBtn{
-        background-color: green; /* Green */
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        font-size: 16px;
-        border-radius: 12px;
-      }
-      #resetBtn{
-        background-color: red; /* Green */
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        font-size: 16px;
-        border-radius: 12px;
-      }
-    </style>
-  </head>
-  <body data-rsssl=1>
-    <div id="canvasDiv">
-        <canvas id="canvasID"></canvas>
-    </div>
-    <div id="buttonDiv">
-        <button id="saveBtn">Save</button> <button id="resetBtn">Reset</button>
-    </div>
-  </body>
-  <!--Import for JQuery-->
-  <script
-			  src="https://code.jquery.com/jquery-3.4.1.js"
-			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-			  crossorigin="anonymous"></script>
-  <script>
+    
     // Adpated from: https://www.html5canvastutorials.com/labs/html5-canvas-paint-application/
     
     //Drawing on the canvas =============================================================
@@ -124,5 +68,3 @@
       console.log('SENT');
     });
   });
-  </script>
-</html>
