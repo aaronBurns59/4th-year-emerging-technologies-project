@@ -5,8 +5,6 @@
 
 import flask as fl
 import base64
-import numpy as np
-import keras as kr
 
 model = kr.models.load_model('../model.h5')
 app = fl.Flask(__name__)
