@@ -64,7 +64,8 @@
       data: {
         imgBase64: dataURL
       }
-    }).done(function(e){
-      console.log('SENT');
+    }).done(function(result){
+      console.log('SENT' + result);
+      $("#result").empty().append(result);
     });
   });

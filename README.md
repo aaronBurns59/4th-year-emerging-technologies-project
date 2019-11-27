@@ -4,6 +4,30 @@
 ## Introduction
 This project involves using the MNIST dataset to train a neural network to recognise digits sent to the network via a web app that allows the user to draw digits. The neural network or model, will be created in python using the **Keras** library. The web app is a standard HTML, Javascript and CSS configuration. And the two are connected via a python **Flask** server file which will connect to two by sending data from the web app to the neural network in the notebook.
 
+## Repository contents
+
+### model.ipynb
+
+### model.h5
+
+### webapp
+
+#### static
+
+##### css
+
+##### js
+
+#### templates
+
+##### app/html
+
+#### app.py
+
+
+## Path through the project
+
+
 ## Tools used 
 - Anaconda: A distributed system for working with machine learning in python, it has a lot of inbuilt packages needed like keras, tenorflow, numpy and matplotlib(More on these later).
 
@@ -11,7 +35,7 @@ This project involves using the MNIST dataset to train a neural network to recog
 
 - Visual Studio Code: A easy to use IDE for making the Flask server and HTML web app.
 
-## Enviroment Set Up
+## Enviroment set up
 ### Download Python
 Download **Python** version 3.7 through ***Anaconda*** (Works with any OS)
 [https://www.anaconda.com/distribution/](https://www.anaconda.com/distribution/)
@@ -36,7 +60,7 @@ cmd line for installing jupyter lab
 or 
 - pip install jupyterlab
 
-## How to Run
+## How to run
 ### Run the notebook 
 1. Clone the repository to you machine:
 git clone https://github.com/aaronBurns59/4th-year-emerging-technologies-project
@@ -49,7 +73,7 @@ jupyter lab
 - If you are interested in changing the default browser to say firefox or chrome, I followed this video to do so
 [https://youtu.be/8avwgjr3oTw](https://youtu.be/8avwgjr3oTw)  
 
-## Run the Flask Server
+## Run the Flask server
 1. Navigate to the project directories subdirectory "webapp"  
 ....\4th-year-emerging-technologies-project\webapp  
 - env FLASK_APP=app.py flask run
@@ -58,7 +82,7 @@ jupyter lab
 ### - Keras
 keras is a ***high level neural networks API***. It is written in Python and can run on top of Tensorflow (Tensorflow is used in the backend). It is good for those who want to experiment quickly with neural networks in a very streamlined implementation, without knowing exactly how machine learning works.
 
-#### Guiding Principles
+#### Guiding principles
 1. User Friendlyness: Designed for humans, follows best practises for reducing cognitve load and offers simple and consistent APIs
 
 2. Modularity: Fully configured **models** can be plugged together with few restrictions. ***neural layers, activation functions, optimizers etc.*** are all stand alone models that can be combine in creating **the** model for the neural network
