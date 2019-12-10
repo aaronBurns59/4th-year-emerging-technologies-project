@@ -107,13 +107,18 @@ keras is a ***high level neural networks API***. It is written in Python and can
 ### - Tensorflow
 
 ### - NumPy
+1. 
 
-#### - One Hot Vector
-
+### - One Hot Vector
+- A **One Hot Vector** is a way of formating data into a very machine readable format. In the case of this project the one hot vector used was a 1d Array with 9 indices. Each indices represents a digit in the MNIST dataset. In the indices are 0s and a 1. The index that contains the 1 is the digit that is recognised.  
+[0,1,2,3,4,5,6,7,8,9]  
+[0,0,0,0,1,0,0,0,0,0] = 4
+ 
 ### - MNSIT
 
 ### - Flask
 
 ## References
 [https://keras.io/](https://keras.io/)
+[https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/](https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/)
 
