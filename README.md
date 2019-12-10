@@ -4,39 +4,42 @@
 ## Introduction
 This project involves using the MNIST dataset to train a neural network to recognise digits sent to the network via a web app that allows the user to draw digits. The neural network or model, will be created in python using the **Keras** library. The web app is a standard HTML, Javascript and CSS configuration. And the two are connected via a python **Flask** server file which will connect to two by sending data from the web app to the neural network in the notebook.
 
-## Repository contents
-
+## Repository contents & Layout
 ### model.ipynb
-This is a jupyter notebook. In here keras is used to build a neural network that is trained recognise digits using the **MNIST** dataset. Not only was the model built and saved in this notebook, I also used it to learn about the neural network and how to manipulate the dataset with numpy.
+- This is a jupyter notebook.
+- In here keras is used to build a neural network that is trained recognise digits using the **MNIST** dataset. 
+- Not only was the model built and saved in this notebook, I also used it to learn about the neural network and how to manipulate the dataset     with numpy.
+
 ### model.h5
-This is the model that was saved from the notebook, it is loaded into the flask. 
+- This is the model that was saved from the notebook, it is loaded into the flask. 
 
 ### webapp
-This folder contains the the flask app, the html webpage and the resources for the webpage.
+- This folder contains the the flask app, the html webpage and the resources for the webpage.
 
 #### app.py
-This is the flask app server. When ran it loads the resources from the static folder. It also loads the model that was created in the in the notebook. It uses the model to predixt the digit sent from the webpage.
+- This is the flask app server. 
+- When ran it loads the resources from the static folder. It also loads the model that was created in the in the notebook. It uses the model to predixt the digit sent from the webpage.
 
 #### static
-This folder contains the directories for the JS and CSS resources.
+- This folder contains the directories for the JS and CSS resources.
 
 ##### css
-This folder contains the CSS file.
+- This folder contains the CSS file.
 
 ###### style.css
-Contains the styles used in the webapp such as organiseing the canvas and decorating the page.
+- Contains the styles used in the webapp such as organiseing the canvas and decorating the page.
 
 ##### js
-This folder contains the javascript file.
+- This folder contains the javascript file.
 
 ###### script.js
-Contains the scripts used in the web app such as resetting the canvas and sending it to the server.
+- Contains the scripts used in the web app such as resetting the canvas and sending it to the server.
 
 #### templates/app/html
-Folder that contains the webpage html file that is loaded from the flask server.
+- Folder that contains the webpage html file that is loaded from the flask server.
 
 ##### webpage.html
-Loaded by the flask server, uses the CSS and JS resources to organise and send data to the flask server.
+- Loaded by the flask server, uses the CSS and JS resources to organise and send data to the flask server.
 
 ## Tools used 
 - Anaconda: A distributed system for working with machine learning in python, it has a lot of inbuilt packages needed like keras, tenorflow, numpy and matplotlib(More on these later).
