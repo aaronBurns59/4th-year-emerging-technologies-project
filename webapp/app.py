@@ -7,12 +7,12 @@ import flask as fl
 import base64
 import numpy as np
 import keras as kr
-# import tensorflow as tf
+import tensorflow as tf
 from PIL import Image, ImageOps
 import cv2
 
 model = kr.models.load_model('../model.h5')
-# graph = tf.get_default_graph()
+graph = tf.get_default_graph()
 app = fl.Flask(__name__)
 
 @app.route('/')
@@ -22,41 +22,43 @@ def home():
 
 @app.route('/predictDigit', methods=['POST'])
 def convertImage():
-    # get the image from the request
-    encodedImage = fl.request.values[('imgBase64')]
-    # decode the dataURL
-    # remove the added part of the url start from the 22 index of the image array
-    decodedImage = base64.b64decode(encodedImage[22:])
-    # save the image
-    with open('image.png', 'wb') as f:
-         f.write(decodedImage)
-    # Dimension of the image needed
-    size=(28,28)
-    # reload the png from the folder
-    # bypass this once you get it working!!!
-    drawnDigit = Image.open('image.png')
-    # Resize the image
-    newImage = ImageOps.fit(drawnDigit, size, Image.ANTIALIAS)
-    # save the image after its been resized
-    newImage.save('resizedImage.png')
-    # reopedn the image now that its resized
-    resizedImage = cv2.imread('resizedImage.png')
-    # Set the image to gray scale
-    grayScaleImage = cv2.cvtColor(resizedImage, cv2.COLOR_BGR2GRAY)
-    # pass the image into an ndarray using  numpy and manipulate it the same way the mnist were in the model
-    imageArray = np.array(grayScaleImage).reshape(1, 784)
+    global graph
+    with graph.as_default():
+        # get the image from the request
+        encodedImage = fl.request.values[('imgBase64')]
+        # decode the dataURL
+        # remove the added part of the url start from the 22 index of the image array
+        decodedImage = base64.b64decode(encodedImage[22:])
+        # save the image
+        with open('image.png', 'wb') as f:
+            f.write(decodedImage)
+        # Dimension of the image needed
+        size=(28,28)
+        # reload the png from the folder
+        # bypass this once you get it working!!!
+        drawnDigit = Image.open('image.png')
+        # Resize the image
+        newImage = ImageOps.fit(drawnDigit, size, Image.ANTIALIAS)
+        # save the image after its been resized
+        newImage.save('resizedImage.png')
+        # reopedn the image now that its resized
+        resizedImage = cv2.imread('resizedImage.png')
+        # Set the image to gray scale
+        grayScaleImage = cv2.cvtColor(resizedImage, cv2.COLOR_BGR2GRAY)
+        # pass the image into an ndarray using  numpy and manipulate it the same way the mnist were in the model
+        imageArray = np.array(grayScaleImage).reshape(1, 784)
 
-    # env FLASK_APP=app.py flask run
+        # env FLASK_APP=app.py flask run
 
-    setPrediction = model.predict(imageArray)
-    
-    getPrediction = np.array(setPrediction[0])
+        setPrediction = model.predict(imageArray)
+        
+        getPrediction = np.array(setPrediction[0])
 
-    # prediction = model.predict(imageArray)
-    predictedDigit = str(np.argmax(getPrediction))
+        # prediction = model.predict(imageArray)
+        predictedDigit = str(np.argmax(getPrediction))
 
     return predictedDigit
     
 # Recommended to have this
 if __name__ == '__main__':
-    app.run(debug=true)
+    app.run(debug=true, threaded = false)
