@@ -7,12 +7,12 @@ import flask as fl
 import base64
 import numpy as np
 import keras as kr
-import tensorflow as tf
+# import tensorflow as tf
 from PIL import Image, ImageOps
 import cv2
 
 model = kr.models.load_model('../model.h5')
-
+# graph = tf.get_default_graph()
 app = fl.Flask(__name__)
 
 @app.route('/')
@@ -36,23 +36,27 @@ def convertImage():
     # bypass this once you get it working!!!
     drawnDigit = Image.open('image.png')
     # Resize the image
-    resizedImage = ImageOps.fit(drawnDigit, size, Image.ANTIALIAS)
+    newImage = ImageOps.fit(drawnDigit, size, Image.ANTIALIAS)
     # save the image after its been resized
-    resizedImage.save('resizedImage.png')
+    newImage.save('resizedImage.png')
     # reopedn the image now that its resized
     resizedImage = cv2.imread('resizedImage.png')
     # Set the image to gray scale
     grayScaleImage = cv2.cvtColor(resizedImage, cv2.COLOR_BGR2GRAY)
     # pass the image into an ndarray using  numpy and manipulate it the same way the mnist were in the model
-    imageArray = np.array(grayScaleImage).reshape(1, 784).astype('float32') / 255
+    imageArray = np.array(grayScaleImage).reshape(1, 784)
 
-    prediction = np.array(model.predict(imageArray)[0])
+    # env FLASK_APP=app.py flask run
 
-    predictedDigit = str(np.argmax(prediction))
-    #predictedDigit = np.argmax(model.predict(prediction[0:1]))
+    setPrediction = model.predict(imageArray)
+    
+    getPrediction = np.array(setPrediction[0])
+
+    # prediction = model.predict(imageArray)
+    predictedDigit = str(np.argmax(getPrediction))
 
     return predictedDigit
     
 # Recommended to have this
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=true)
