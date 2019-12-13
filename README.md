@@ -114,5 +114,3 @@ keras is a ***high level neural networks API***. It is written in Python and can
 [https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/](https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/)  
 [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/)  
 [https://www.palletsprojects.com/p/flask/](https://www.palletsprojects.com/p/flask/)  
-
-
