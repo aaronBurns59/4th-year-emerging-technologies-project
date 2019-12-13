@@ -109,8 +109,10 @@ keras is a ***high level neural networks API***. It is written in Python and can
 - Flask is a python web application framework that is designed to be quick and eeasy to start. It works with a number of python packages such as the ones used in this project, like keras, numpy and PIL. All of these where used in this project inside a flask app "route". Routes are paths that can contain functions that can be called from the webpage.
 
 ## References
-[https://keras.io/](https://keras.io/)
-[https://numpy.org/devdocs/user/quickstart.html](https://numpy.org/devdocs/user/quickstart.html)
-[https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/](https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/)
-[https://www.tensorflow.org/about](https://www.tensorflow.org/about)
+[https://keras.io/](https://keras.io/)  
+[https://numpy.org/devdocs/user/quickstart.html](https://numpy.org/devdocs/user/quickstart.html)  
+[https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/](https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/)  
+[http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/)  
+[https://www.palletsprojects.com/p/flask/](https://www.palletsprojects.com/p/flask/)  
+
 
