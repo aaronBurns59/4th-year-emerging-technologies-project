@@ -8,7 +8,7 @@ This project involves using the MNIST dataset to train a neural network to recog
 ### model.ipynb
 - This is a jupyter notebook.
 - In here keras is used to build a neural network that is trained recognise digits using the **MNIST** dataset. 
-- Not only was the model built and saved in this notebook, I also used it to learn about the neural network and how to manipulate the dataset     with numpy.
+- Not only was the model built and saved in this notebook, I also used it to learn about the neural network and how to manipulate the dataset with numpy.
 
 ### model.h5
 - This is the model that was saved from the notebook, it is loaded into the flask. 
@@ -93,33 +93,24 @@ jupyter lab
 
 ## Research
 ### - Keras
-keras is a ***high level neural networks API***. It is written in Python and can run on top of Tensorflow (Tensorflow is used in the backend). It is good for those who want to experiment quickly with neural networks in a very streamlined implementation, without knowing exactly how machine learning works.
-
-#### Guiding principles
-1. User Friendlyness: Designed for humans, follows best practises for reducing cognitve load and offers simple and consistent APIs
-
-2. Modularity: Fully configured **models** can be plugged together with few restrictions. ***neural layers, activation functions, optimizers etc.*** are all stand alone models that can be combine in creating **the** model for the neural network
-
-3. Easily Extendibility: New models are simple to add ***model.add(....)***
-
-4. Works with Python: Models are described in python code, this make it easier to debug and easier to extend.
-
-### - Tensorflow
+keras is a ***high level neural networks API***. It is written in Python and can run on top of Tensorflow (Tensorflow is used in the backend). It is good for those who want to experiment quickly with neural networks in a very streamlined implementation, without knowing exactly how machine learning works. It is easy to used and streamlined to make is more user friendlly and less daunting when building neural networks.
 
 ### - NumPy
-1. 
+- Numpy is a python package that is used for manipulating arrays. It offers a lot for functions both building and reshaping the arrays that are used to train the model. And it is used for reshaping the image read in by the digit reader. Numpy is used in both the jupyter notebook and the flask app. I had to use numpy to reshape the canvas image the same as was done to the MNIST dataset in the notebook.
 
 ### - One Hot Vector
 - A **One Hot Vector** is a way of formating data into a very machine readable format. In the case of this project the one hot vector used was a 1d Array with 9 indices. Each indices represents a digit in the MNIST dataset. In the indices are 0s and a 1. The index that contains the 1 is the digit that is recognised.  
                                                     [0,1,2,3,4,5,6,7,8,9]  
                                                     [0,0,0,0,1,0,0,0,0,0] = 4
- 
 ### - MNSIT
+- This is a database of handwritten digits and labels. there are 600000 drawn digits and labels for training a neural network and 100000 drawn digits and labels for training the model of the neural network when it is built. It is commonly used for learning to build neural networks.  
 
 ### - Flask
+- Flask is a python web application framework that is designed to be quick and eeasy to start. It works with a number of python packages such as the ones used in this project, like keras, numpy and PIL. All of these where used in this project inside a flask app "route". Routes are paths that can contain functions that can be called from the webpage.
 
 ## References
 [https://keras.io/](https://keras.io/)
 [https://numpy.org/devdocs/user/quickstart.html](https://numpy.org/devdocs/user/quickstart.html)
 [https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/](https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/)
+[https://www.tensorflow.org/about](https://www.tensorflow.org/about)
 

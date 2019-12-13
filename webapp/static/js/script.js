@@ -25,10 +25,10 @@
     }, false);
 
     // Changing the properties of the ctx
-    ctx.lineWidth =5;
+    ctx.lineWidth = 5;
     ctx.lineJoin = 'round';
     ctx.linCap = 'round';
-    ctx.strokeStyle= '#FFFFFF';
+    ctx.strokeStyle = '#FFFFFF';
 
     canvas.addEventListener('mousedown',function(e){
       ctx.beginPath();

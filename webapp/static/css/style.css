@@ -4,31 +4,31 @@
     width: 400px;
     height: 400px;
     }
-    #buttonDiv{
+#buttonDiv{
       margin: 0px auto;
       text-align: center;
       padding: 20px;
     }     
-    #canvasID{
+#canvasID{
       border: 5px solid yellow;
       background-color: black;
     }
-    #saveBtn{
-      background-color: green; /* Green */
+#saveBtn{
+      background-color: green;
       color: white;
       padding: 10px 20px;
       text-align: center;
       font-size: 16px;
       border-radius: 12px;
     }
-    #resetBtn{
-      background-color: red; /* Green */
+#resetBtn{
+      background-color: red;
       color: white;
       padding: 10px 20px;
       text-align: center;
       font-size: 16px;
       border-radius: 12px;
     }
-    #resultDiv{
+#resultDiv{
       text-align: center;
     }
