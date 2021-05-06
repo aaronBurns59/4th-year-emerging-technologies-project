@@ -56,9 +56,9 @@ Download **Python** version 3.7 through ***Anaconda*** (Works with any OS)
 Check the version of python, open a cmd/terminal and enter
 - python --version
 
-make sure its al least version 3.7.
+make sure its at least version 3.7.
 
-If you have an older version of anaconda  you can update it with
+If you have an older version of anaconda you can update it with
 - conda update --all
 
 ### Anaconda
