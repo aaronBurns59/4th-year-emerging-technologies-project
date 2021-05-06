@@ -102,7 +102,7 @@ keras is a ***high level neural networks API***. It is written in Python and can
 - A **One Hot Vector** is a way of formating data into a very machine readable format. In the case of this project the one hot vector used was a 1d Array with 9 indices. Each indices represents a digit in the MNIST dataset. In the indices are 0s and a 1. The index that contains the 1 is the digit that is recognised.  
                                                     [0,1,2,3,4,5,6,7,8,9]  
                                                     [0,0,0,0,1,0,0,0,0,0] = 4
-### - MNSIT
+### - MNIST
 - This is a database of handwritten digits and labels. there are 600000 drawn digits and labels for training a neural network and 100000 drawn digits and labels for training the model of the neural network when it is built. It is commonly used for learning to build neural networks.  
 
 ### - Flask
