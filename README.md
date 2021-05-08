@@ -7,7 +7,7 @@ This project involves using the MNIST dataset to train a neural network to recog
 ## Repository contents & Layout
 ### model.ipynb
 - This is a jupyter notebook.
-- In here keras is used to build a neural network that is trained recognise digits using the **MNIST** dataset. 
+- In here keras is used to build a neural network that is trained to recognise digits using the **MNIST** dataset. 
 - Not only was the model built and saved in this notebook, I also used it to learn about the neural network and how to manipulate the dataset with numpy.
 
 ### model.h5
